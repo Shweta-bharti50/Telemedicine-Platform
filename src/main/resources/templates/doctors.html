@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Find Doctors - TeleMed</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="dashboard-nav">
+
+    <div class="logo">
+        🩺 TeleMed
+    </div>
+
+    <nav class="dashboard-links">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="appointments.html">
+            Appointments
+        </a>
+
+        <a href="consultations.html">
+            Consultations
+        </a>
+
+        <a href="payments.html">
+            Payments
+        </a>
+
+    </nav>
+
+    <div>
+
+        <span id="userName"></span>
+
+        <button
+                onclick="logout()"
+                class="logout-btn">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- MAIN -->
+
+<main class="page-container">
+
+    <div class="page-header">
+
+        <div>
+
+            <p class="small-title">
+                TELEMED
+            </p>
+
+            <h1>
+                Find a Doctor
+            </h1>
+
+            <p>
+                Find the right doctor for your healthcare needs.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="doctor-search">
+
+        <input
+                type="text"
+                id="specialization"
+                placeholder="Search specialization e.g. Cardiologist">
+
+        <button onclick="searchDoctors()">
+            Search
+        </button>
+
+        <button
+                onclick="loadDoctors()"
+                class="clear-btn">
+
+            All Doctors
+
+        </button>
+
+    </div>
+
+
+    <!-- MESSAGE -->
+
+    <p id="message"></p>
+
+
+    <!-- DOCTORS -->
+
+    <div
+            id="doctorContainer"
+            class="doctor-grid">
+
+    </div>
+
+</main>
+
+
+<!-- BOOK APPOINTMENT MODAL -->
+
+<div
+        id="appointmentModal"
+        class="modal">
+
+    <div class="modal-content">
+
+        <span
+                class="close"
+                onclick="closeAppointmentModal()">
+
+            &times;
+
+        </span>
+
+        <h2>
+            Book Appointment
+        </h2>
+
+        <p id="selectedDoctor"></p>
+
+
+        <form id="appointmentForm">
+
+            <input
+                    type="hidden"
+                    id="doctorId">
+
+
+            <label>
+                Appointment Date
+            </label>
+
+            <input
+                    type="date"
+                    id="appointmentDate"
+                    required>
+
+
+            <label>
+                Appointment Time
+            </label>
+
+            <input
+                    type="time"
+                    id="appointmentTime"
+                    required>
+
+
+            <label>
+                Reason for Visit
+            </label>
+
+            <textarea
+                    id="reason"
+                    placeholder="Describe your problem"
+                    required>
+            </textarea>
+
+
+            <button type="submit">
+                Book Appointment
+            </button>
+
+        </form>
+
+
+        <p id="appointmentMessage"></p>
+
+    </div>
+
+</div>
+
+
+<script src="js/doctors.js"></script>
+
+</body>
+
+</html>

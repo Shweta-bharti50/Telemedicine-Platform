@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Appointments - TeleMed</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        🩺 TeleMed
+    </div>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="doctors.html">Find Doctors</a>
+        <a href="appointments.html" class="active">Appointments</a>
+        <a href="consultations.html">Consultations</a>
+        <a href="payments.html">Payments</a>
+    </nav>
+
+    <div class="nav-user">
+        <span id="userName"></span>
+        <button onclick="logout()" class="logout-btn">
+            Logout
+        </button>
+    </div>
+
+</header>
+
+
+<main class="appointments-page">
+
+    <section class="page-heading">
+
+        <div>
+            <h1>My Appointments</h1>
+
+            <p>
+                Manage your upcoming and previous doctor appointments.
+            </p>
+        </div>
+
+        <a href="doctors.html" class="primary-btn">
+            + Book Appointment
+        </a>
+
+    </section>
+
+
+    <!-- Appointment Statistics -->
+
+    <section class="appointment-stats">
+
+        <div class="stat-card">
+            <h3>Total</h3>
+            <p id="totalAppointments">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Pending</h3>
+            <p id="pendingAppointments">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Confirmed</h3>
+            <p id="confirmedAppointments">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Completed</h3>
+            <p id="completedAppointments">0</p>
+        </div>
+
+    </section>
+
+
+    <!-- Message -->
+
+    <div id="message" class="page-message"></div>
+
+
+    <!-- Appointments -->
+
+    <section>
+
+        <div id="appointmentsContainer"
+             class="appointments-container">
+
+            <div class="loading">
+                Loading appointments...
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Payment Modal -->
+
+<div id="paymentModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close"
+              onclick="closePaymentModal()">
+            &times;
+        </span>
+
+        <h2>Make Payment</h2>
+
+        <p class="payment-subtitle">
+            Complete your consultation payment.
+        </p>
+
+        <div class="payment-summary">
+
+            <p>
+                <strong>Doctor:</strong>
+                <span id="paymentDoctor"></span>
+            </p>
+
+            <p>
+                <strong>Appointment:</strong>
+                <span id="paymentAppointment"></span>
+            </p>
+
+            <p>
+                <strong>Amount:</strong>
+                ₹<span id="paymentAmount"></span>
+            </p>
+
+        </div>
+
+
+        <form id="paymentForm">
+
+            <input type="hidden" id="paymentAppointmentId">
+            <input type="hidden" id="paymentAmountValue">
+
+            <label for="paymentMethod">
+                Payment Method
+            </label>
+
+            <select id="paymentMethod" required>
+
+                <option value="">
+                    Select Payment Method
+                </option>
+
+                <option value="UPI">
+                    UPI
+                </option>
+
+                <option value="CARD">
+                    Card
+                </option>
+
+                <option value="NET_BANKING">
+                    Net Banking
+                </option>
+
+            </select>
+
+
+            <button type="submit" class="primary-btn">
+                Pay Now
+            </button>
+
+        </form>
+
+        <p id="paymentMessage"></p>
+
+    </div>
+
+</div>
+
+
+<script src="js/appointments.js"></script>
+
+</body>
+</html>

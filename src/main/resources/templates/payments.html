@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Payments - TeleMed</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        🩺 TeleMed
+    </div>
+
+
+    <nav>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="doctors.html">
+            Find Doctors
+        </a>
+
+        <a href="appointments.html">
+            Appointments
+        </a>
+
+        <a href="consultations.html">
+            Consultations
+        </a>
+
+        <a href="payments.html"
+           class="active">
+            Payments
+        </a>
+
+    </nav>
+
+
+    <div class="nav-user">
+
+        <span id="userName"></span>
+
+        <button onclick="logout()"
+                class="logout-btn">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<main class="payments-page">
+
+
+    <!-- Page Heading -->
+
+    <section class="page-heading">
+
+        <div>
+
+            <h1>
+                Payment History
+            </h1>
+
+            <p>
+                View and manage your consultation payments.
+            </p>
+
+        </div>
+
+
+        <a href="appointments.html"
+           class="primary-btn">
+
+            View Appointments
+
+        </a>
+
+    </section>
+
+
+
+    <!-- Payment Statistics -->
+
+    <section class="payment-stats">
+
+
+        <div class="payment-stat-card">
+
+            <div class="stat-icon">
+                💳
+            </div>
+
+            <div>
+
+                <h3>
+                    Total Payments
+                </h3>
+
+                <p id="totalPayments">
+                    0
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="payment-stat-card">
+
+            <div class="stat-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <h3>
+                    Successful
+                </h3>
+
+                <p id="successfulPayments">
+                    0
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="payment-stat-card">
+
+            <div class="stat-icon">
+                ₹
+            </div>
+
+            <div>
+
+                <h3>
+                    Total Paid
+                </h3>
+
+                <p>
+                    ₹<span id="totalAmount">0</span>
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="payment-stat-card">
+
+            <div class="stat-icon">
+                ⏳
+            </div>
+
+            <div>
+
+                <h3>
+                    Pending
+                </h3>
+
+                <p id="pendingPayments">
+                    0
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Message -->
+
+    <div id="message"
+         class="page-message">
+    </div>
+
+
+
+    <!-- Payment Table -->
+
+    <section class="payments-section">
+
+
+        <div class="payments-table-wrapper">
+
+            <table class="payments-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Transaction
+                        </th>
+
+                        <th>
+                            Appointment
+                        </th>
+
+                        <th>
+                            Amount
+                        </th>
+
+                        <th>
+                            Method
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="paymentsTableBody">
+
+                    <tr>
+
+                        <td colspan="6"
+                            class="loading-cell">
+
+                            Loading payments...
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<script src="js/payments.js"></script>
+
+</body>
+
+</html>

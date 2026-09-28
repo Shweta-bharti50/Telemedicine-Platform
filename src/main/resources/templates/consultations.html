@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Consultations - TeleMed</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        🩺 TeleMed
+    </div>
+
+    <nav>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="doctors.html">
+            Find Doctors
+        </a>
+
+        <a href="appointments.html">
+            Appointments
+        </a>
+
+        <a href="consultations.html"
+           class="active">
+            Consultations
+        </a>
+
+        <a href="payments.html">
+            Payments
+        </a>
+
+    </nav>
+
+    <div class="nav-user">
+
+        <span id="userName"></span>
+
+        <button onclick="logout()"
+                class="logout-btn">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="consultations-page">
+
+
+    <!-- Heading -->
+
+    <section class="page-heading">
+
+        <div>
+
+            <h1>
+                My Consultations
+            </h1>
+
+            <p>
+                View your consultation history,
+                diagnosis and prescriptions.
+            </p>
+
+        </div>
+
+        <a href="appointments.html"
+           class="primary-btn">
+
+            My Appointments
+
+        </a>
+
+    </section>
+
+
+    <!-- Statistics -->
+
+    <section class="consultation-stats">
+
+        <div class="consultation-stat-card">
+
+            <span class="consultation-stat-icon">
+                🩺
+            </span>
+
+            <div>
+
+                <h3>
+                    Total
+                </h3>
+
+                <p id="totalConsultations">
+                    0
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="consultation-stat-card">
+
+            <span class="consultation-stat-icon">
+                📅
+            </span>
+
+            <div>
+
+                <h3>
+                    Scheduled
+                </h3>
+
+                <p id="scheduledConsultations">
+                    0
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="consultation-stat-card">
+
+            <span class="consultation-stat-icon">
+                ✓
+            </span>
+
+            <div>
+
+                <h3>
+                    Completed
+                </h3>
+
+                <p id="completedConsultations">
+                    0
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="consultation-stat-card">
+
+            <span class="consultation-stat-icon">
+                ⏳
+            </span>
+
+            <div>
+
+                <h3>
+                    In Progress
+                </h3>
+
+                <p id="activeConsultations">
+                    0
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div id="message"
+         class="page-message">
+    </div>
+
+
+    <!-- Consultation Cards -->
+
+    <section>
+
+        <div id="consultationsContainer"
+             class="consultations-container">
+
+            <div class="loading">
+                Loading consultations...
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Consultation Details Modal -->
+
+<div id="consultationModal"
+     class="modal">
+
+    <div class="modal-content consultation-modal">
+
+        <span class="close"
+              onclick="closeConsultationModal()">
+
+            &times;
+
+        </span>
+
+
+        <h2>
+            Consultation Details
+        </h2>
+
+
+        <div id="consultationDetails">
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/consultations.js"></script>
+
+</body>
+
+</html>
